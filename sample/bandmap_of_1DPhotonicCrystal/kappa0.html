@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .error {
+        color: red;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-lite@4.17.0"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"name": "data-135f9a7a5533c39fded13155cbd68e66"}, "mark": {"type": "point", "shape": "circle"}, "encoding": {"size": {"value": 100}, "tooltip": [{"field": "ff", "type": "quantitative"}, {"field": "kappa", "type": "quantitative"}], "x": {"field": "ff", "scale": {"zero": false}, "type": "quantitative"}, "y": {"field": "kappa", "scale": {"zero": false}, "title": "kappa/(pi/a)", "type": "quantitative"}}, "title": "kappa ", "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-135f9a7a5533c39fded13155cbd68e66": [{"ff": 0.10000000000000002, "kappa": 0.07363747959796631}, {"ff": 0.08000000000000002, "kappa": 0.0737759500147608}, {"ff": 0.06000000000000001, "kappa": 0.07283523304129152}, {"ff": 0.04000000000000001, "kappa": 0.07100552497854742}, {"ff": 0.12000000000000002, "kappa": 0.07001889688224054}, {"ff": 0.14, "kappa": 0.061524474478198685}, {"ff": 0.16, "kappa": 0.04160430198630884}, {"ff": 0.18000000000000002, "kappa": 0.0}, {"ff": 0.2, "kappa": 0.0}, {"ff": 0.02, "kappa": 0.062084213284683346}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div class="error" style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>

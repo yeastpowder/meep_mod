@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .error {
+        color: red;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-lite@4.17.0"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"name": "data-c4ce9160ab347c9c2272830a2724575f"}, "mark": {"type": "point", "shape": "circle"}, "encoding": {"color": {"field": "band", "type": "nominal"}, "size": {"value": 100}, "tooltip": [{"field": "a", "type": "quantitative"}, {"field": "ff", "type": "quantitative"}, {"field": "band", "type": "quantitative"}, {"field": "kx", "type": "quantitative"}, {"field": "freq", "type": "quantitative"}], "x": {"field": "ff", "scale": {"zero": false}, "type": "quantitative"}, "y": {"field": "freq", "scale": {"zero": false}, "type": "quantitative"}}, "title": "Bandedges ", "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-c4ce9160ab347c9c2272830a2724575f": [{"freq": 0.6096749880278035, "band": 0.0, "kx": 0.5, "a": 0.33, "ff": 0.02}, {"freq": 0.6457207344704474, "band": 1.0, "kx": 0.5, "a": 0.33, "ff": 0.02}, {"freq": 0.6112440023925324, "band": 0.0, "kx": 0.5, "a": 0.33, "ff": 0.04000000000000001}, {"freq": 0.6699266017027341, "band": 1.0, "kx": 0.5, "a": 0.33, "ff": 0.04000000000000001}, {"freq": 0.6161380146805294, "band": 0.0, "kx": 0.5, "a": 0.33, "ff": 0.06000000000000001}, {"freq": 0.6886026633595368, "band": 1.0, "kx": 0.5, "a": 0.33, "ff": 0.06000000000000001}, {"freq": 0.6212825149033241, "band": 0.0, "kx": 0.5, "a": 0.33, "ff": 0.08000000000000002}, {"freq": 0.7087043588871652, "band": 1.0, "kx": 0.5, "a": 0.33, "ff": 0.08000000000000002}, {"freq": 0.6262632061465224, "band": 0.0, "kx": 0.5, "a": 0.33, "ff": 0.10000000000000002}, {"freq": 0.7320828550956433, "band": 1.0, "kx": 0.5, "a": 0.33, "ff": 0.10000000000000002}, {"freq": 0.632240735675354, "band": 0.0, "kx": 0.5, "a": 0.33, "ff": 0.12000000000000002}, {"freq": 0.7507933507867055, "band": 1.0, "kx": 0.5, "a": 0.33, "ff": 0.12000000000000002}, {"freq": 0.6398402570859868, "band": 0.0, "kx": 0.5, "a": 0.33, "ff": 0.14}, {"freq": 0.7644857534705695, "band": 1.0, "kx": 0.5, "a": 0.33, "ff": 0.14}, {"freq": 0.6508887297395628, "band": 0.0, "kx": 0.5, "a": 0.33, "ff": 0.16}, {"freq": 0.7761585462581743, "band": 1.0, "kx": 0.5, "a": 0.33, "ff": 0.16}, {"freq": 0.6631447304498467, "band": 0.0, "kx": 0.5, "a": 0.33, "ff": 0.18000000000000002}, {"freq": 0.7862543670055157, "band": 1.0, "kx": 0.5, "a": 0.33, "ff": 0.18000000000000002}, {"freq": 0.6759970642227131, "band": 0.0, "kx": 0.5, "a": 0.33, "ff": 0.2}, {"freq": 0.7960283260691557, "band": 1.0, "kx": 0.5, "a": 0.33, "ff": 0.2}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div class="error" style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>
