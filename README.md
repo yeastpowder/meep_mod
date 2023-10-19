@@ -466,7 +466,7 @@ for i, wg_l in enumerate([5,10,20]):
     study.output_result()
 ```
 结果如下，长度越大taper效率越高\
-<img src='./readme/scan.png' width=400>
+<img src='./readme/scan.jpg' width=400>
 
 ## 更多案例
 ./sample文件夹下提供了一个分析硅基一维光子晶体腔的案例（*待补全*），详细说明参见[sample.ipynb](sample.ipynb)
