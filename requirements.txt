@@ -1,0 +1,5 @@
+pymeep ~= 1.21.0
+numpy~=1.21.4
+h5py~=3.2.1
+matplotlib~=3.5.1
+setuptools~=59.6.0
